@@ -1,2 +1,2 @@
-# javascript
-Exemplos e testes com Javascript
+# JavaScript
+Exemplos e testes com JavaScript
