@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Acréscimo e Desconto</title>
+</head>
+<body>
+    <h1>Calculadora de Acréscimo e Desconto</h1>
+    <p>Informe o valor atual, o acréscimo e o desconto para calcular o valor total:</p>
+    <form id="calculadora-form">
+        <label for="valor-atual">Valor Atual (R$):</label>
+        <input type="number" id="valor-atual" step="0.01" placeholder="Digite o valor atual" required>
+        <br>
+        <label for="acrescimo">Acréscimo (R$):</label>
+        <input type="number" id="acrescimo" step="0.01" placeholder="Digite o valor de acréscimo">
+        <br>
+        <label for="desconto">Desconto (R$):</label>
+        <input type="number" id="desconto" step="0.01" placeholder="Digite o valor de desconto">
+        <br>
+        <label for="valor-total">Valor Total:</label>
+        <input id="valor-total" placeholder="Valor total" readonly>
+    </form>
+
+    <script>
+        const valorAtualInput = document.getElementById('valor-atual');
+        const acrescimoInput = document.getElementById('acrescimo');
+        const descontoInput = document.getElementById('desconto');
+        const valorTotal = document.getElementById('valor-total');
+
+        function formatarMoeda(valor) {
+            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor).replace('R$', '');
+        }
+
+        function calcularValorTotal() {
+            const valorAtual = parseFloat(valorAtualInput.value);
+            const acrescimo = parseFloat(acrescimoInput.value) || 0;
+            const desconto = parseFloat(descontoInput.value) || 0;
+
+            const valorCalculado = valorAtual + acrescimo - desconto;
+            valorTotal.value = formatarMoeda(valorCalculado);
+        }
+
+        valorAtualInput.addEventListener('input', calcularValorTotal);
+        acrescimoInput.addEventListener('input', calcularValorTotal);
+        descontoInput.addEventListener('input', calcularValorTotal);
+    </script>
+</body>
+</html>
