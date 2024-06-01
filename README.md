@@ -5,4 +5,4 @@ Exemplos em JavaScript
 
 [Validação de formulário](https://rudineiw.github.io/JavaScript/validar-formulario.html)
 
-[Calcular scréscimo e desconto](https://rudineiw.github.io/JavaScript/calcula-valor.html)
+[Calcular acréscimo e desconto](https://rudineiw.github.io/JavaScript/calcula-valor.html)
